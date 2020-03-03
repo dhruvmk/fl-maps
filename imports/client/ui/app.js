@@ -32,7 +32,7 @@ import Admin from "./pages/Admin/index"
 
 // Docuss
 import { comToPlugin, inIFrame } from 'dcs-client'
-import { SimpleRouteMatcher } from 'meteor/sylque:dcs-simple-route-matcher'
+// import { SimpleRouteMatcher } from 'meteor/sylque:dcs-simple-route-matcher'
 import { runReactRouterSync } from 'dcs-react-router-sync'
 import websiteJSON from '../../../public/dcs-website.json'
 
@@ -183,16 +183,17 @@ if (inIFrame()) {
 
 }
 
-const routeMatcher = new SimpleRouteMatcher({
-  maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength,
-  forceLowercase: websiteJSON.dcsTag.forceLowercase,
-  predefinedPageNames: websiteJSON.pages.map(p => ({
-    pageName: p.name,
-    pathname: p.url // This works because we know our urls are all relative urls, i.e. pathname = url
-  })),
-  otherPagesPrefix: websiteJSON.webApp.otherPagesPrefix
-})
+// const routeMatcher = new SimpleRouteMatcher({
+//   maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength,
+//   forceLowercase: websiteJSON.dcsTag.forceLowercase,
+//   predefinedPageNames: websiteJSON.pages.map(p => ({
+//     pageName: p.name,
+//     pathname: p.url // This works because we know our urls are all relative urls, i.e. pathname = url
+//   })),
+//   otherPagesPrefix: websiteJSON.webApp.otherPagesPrefix
+// })
 
-runReactRouterSync({ browserHistory: history, routeMatcher })  
+// runReactRouterSync({ browserHistory: history, routeMatcher })  
+runReactRouterSync({ browserHistory: history })  
 
 //------------------------------------------------------------------------------

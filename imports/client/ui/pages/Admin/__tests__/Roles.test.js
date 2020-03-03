@@ -1,29 +1,22 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Roles from '../AdminTable/Roles'
-import {RadioInput} from '../RoleSelect/index'
+import Roles from '../../AdminTable/Roles'
+import { RadioInput } from '../../RoleSelect/index'
 
-describe("<Roles/>", ()=>{
- const userAdmin = {
-
+describe("<Roles/>", () => {
+  const userAdmin = {
     _id: "GKnfyoGCYCGXAB9rR",
     profile: {_id: "1234", name: "RR@gmail.com" },
-    roles: { __global_roles__: ['admin'] },
-
+    roles: { __global_roles__: ['admin'] }
   }
   const userNoRole = {
     _id: "GKnfyoGCYCGXAB9rR",
-    profile: { name: "RR@gmail.com" },
+    profile: { name: "RR@gmail.com" }
   }
  
-  const wrapper = mount(<Roles
+  const wrapper = mount(<Roles user={[]} changeUserRole={() => { return null }} />)
 
-    user={[]}
-    changeUserRole={() => { return null }}
-
-  />)
-
-  it('should render <Roles/>', ()=>{
+  it('should render <Roles/>', () => {
       expect(wrapper.exists()).toBe(true)
   })
 
@@ -48,7 +41,4 @@ describe("<Roles/>", ()=>{
     expect(wrapper.find("input[value='admin']").prop('defaultChecked')).toEqual(null)
     expect(wrapper.find("input[value='moderator']").prop('defaultChecked')).toEqual(null)
   })
-
-
-
 })

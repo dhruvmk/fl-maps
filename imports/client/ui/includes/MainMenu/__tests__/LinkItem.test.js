@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import { NavLink } from 'reactstrap'
 import LinkItem from '../LinkItem'

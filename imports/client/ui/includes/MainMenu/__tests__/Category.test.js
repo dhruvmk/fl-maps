@@ -1,18 +1,16 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import sinon from 'sinon'
 import { Nav } from 'reactstrap'
 import Category from '../Sidebar/Category'
 import LinkItem from '../LinkItem'
 
 describe('<Category />', () => {
-  const shallowRenderer = props =>
-    shallow(
-      <Category
-        item={{ title: 'test-category', content: [] }}
-        {...props}
-      />
-    )
+  const shallowRenderer = props => shallow(
+    <Category
+      item={{ title: 'test-category', content: [] }}
+      {...props}
+    />
+  )
 
   const wrapper = shallowRenderer()
 

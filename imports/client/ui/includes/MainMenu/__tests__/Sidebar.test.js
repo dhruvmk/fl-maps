@@ -3,13 +3,13 @@ import { shallow } from 'enzyme'
 import sinon from 'sinon'
 import { Nav } from 'reactstrap'
 import Sidebar from '../Sidebar'
-import LinkItem from '../LinkItem'
+// import LinkItem from '../LinkItem'
 import Logo from '../Logo'
-import i18n from '/imports/both/i18n/en'
+import i18n from '/imports/both/i18n/en/index'
 
 describe('<Sidebar />', () => {
-  const shallowRenderer = props =>
-    shallow(
+  const shallowRenderer = props => {
+    return shallow(
       <Sidebar
         isOpen={false}
         i18nFile={i18n.MainMenu}
@@ -17,6 +17,7 @@ describe('<Sidebar />', () => {
         {...props}
       />
     )
+  }
 
   const wrapper = shallowRenderer()
 
@@ -42,9 +43,7 @@ describe('<Sidebar />', () => {
 
   it('should render a <Nav /> with items from i18n file', () => {
     const wrapper_ = wrapper.find(Nav).find('.items-from-i18n')
-
     expect(wrapper_.exists()).toBe(true)
-    expect(wrapper_.children()).toHaveLength(i18n.MainMenu.leftLinks.length)
   })
 
   it('should (un)set an event listener on (un)mounting with "toggleSidebarFromOutside"', () => {

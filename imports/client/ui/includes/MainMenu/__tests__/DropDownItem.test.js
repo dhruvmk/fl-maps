@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { Router, MemoryRouter } from 'react-router-dom'
 import { DropdownMenu, DropdownItem } from 'reactstrap'
 import DropDownItem from '../DropDownItem'
 
@@ -16,7 +15,6 @@ describe('<DropDownItem />', () => {
   const component = shallow(<DropDownItem item={item} />)
 
   it('should render', () => {
-
     expect(component.exists()).toBeTruthy()
   })
 

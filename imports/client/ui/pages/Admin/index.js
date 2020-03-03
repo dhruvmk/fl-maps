@@ -12,9 +12,9 @@ import { parseData} from  './AdminTable/helper'
 class Admin extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       users : [],
-      currentUserDisplay:{role: "", name:""},
+      currentUserDisplay: { role: "", name:"" },
       events: [],
       limit: 25,
       skip: 0,
@@ -22,11 +22,10 @@ class Admin extends Component {
       alertNotAuthorized : false,
       isSearching: false,
       isAllEvents: false,
- 
-      }
-     }
+    }
+  }
   
-  componentDidMount(){
+  componentDidMount() {
    
     checkPermissions('adminPage').then((isPermision) => {
 
